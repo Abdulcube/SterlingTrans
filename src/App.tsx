@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import { HelloWorld } from './HelloWorld';
+import logo from "./logo.svg"
 function App() {
   return (
     <div className="App">
@@ -10,6 +10,7 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <HelloWorld route={"helloRoute"}/>
         <a
           className="App-link"
           href="https://reactjs.org"
