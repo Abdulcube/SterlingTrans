@@ -3,20 +3,20 @@
 
 
 ## Business plan:
-    - Create a marketing page as a landing page when Sterling is being searched online
-    - Have a Link/QR code to direct potential customers
-    - Create functionality to capture future customers' information.
+- Create a marketing page as a landing page when Sterling is being searched online
+- Have a Link/QR code to direct potential customers
+- Create functionality to capture future customers' information.
 ### Requirements:
-    > Example site: https://austinpremiumlimousine.com/
-    - Home landing page
-    - About page with company
-        - principles and promises
-        - clients
-        - contact form
-    - Services page
-        - lists of services
-        - photos of vehicles
-        - contact form
+> Example site: https://austinpremiumlimousine.com/
+- Home landing page
+- About page with company
+    - principles and promises
+    - clients
+    - contact form
+- Services page
+    - lists of services
+    - photos of vehicles
+    - contact form
         
 ## Development Plan
 # Transportation Company Website Development Plan
