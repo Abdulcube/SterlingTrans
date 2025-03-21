@@ -1,7 +1,25 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, Stack } from "@mui/material";
+import { AppBar, Toolbar, Typography, Stack, useScrollTrigger } from "@mui/material";
 import MenuList from "./MenuList";
 import {BasicMenu} from "./Dropdown";
+
+
+const ElevationScroll = ({children}: {children: React.ReactNode}) => {
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+  });
+
+  return children
+    ? React.cloneElement(children as React.ReactElement, {
+        elevation: trigger ? 4 : 0,
+        sx: {
+          backgroundColor: trigger ? "dark.pallette.primary.main" : "transparent", // Change background dynamically
+          transition: "background-color 0.3s ease", // Smooth transition
+        },
+      })
+    : null;
+}
 
 const NavBar = ({
   menuItems = [
@@ -15,12 +33,14 @@ const NavBar = ({
   menuItems?: { text: string; path: string }[];
 }) => {
   return (
-    <AppBar >
-      <Toolbar variant="dense">
+    <ElevationScroll >
+
+    <AppBar>
+      <Toolbar variant="dense" >
         <Stack
           direction="row"
           sx={{
-            justifyContent: "space-between",
+            justifyContent: "space-around",
             alignItems: "center",
             width: "100%",
           }}
@@ -34,6 +54,7 @@ const NavBar = ({
         </Stack>
       </Toolbar>
     </AppBar>
+    </ElevationScroll>
   );
 };
 

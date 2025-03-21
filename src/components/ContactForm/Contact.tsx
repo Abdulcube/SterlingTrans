@@ -1,26 +1,42 @@
+import { IChangeEvent } from "@rjsf/core";
 import Form from "@rjsf/material-ui";
 import { RJSFSchema } from "@rjsf/utils";
 import validator from "@rjsf/validator-ajv8";
+import { FormEvent, useRef, useState } from "react";
+import { schema, uiSchema } from "./constants";
+import { SuccessDialog } from "./SuccessDialog";
+import { ThemeProvider } from "@mui/material";
+import { whiteTheme } from "../../theme";
 
-export const Contact = () => {
-  const schema: RJSFSchema = {
-    title: "Todo",
-    type: "object",
-    required: ["title"],
-    properties: {
-      title: { type: "string", title: "Title", default: "A new task" },
-      done: { type: "boolean", title: "Done?", default: false },
-    },
+export const ContactForm = () => {
+  const formRef = useRef<any>(null);
+  const [dialog, setDialog] = useState(false);
+
+  const onSubmit = (
+    data: IChangeEvent<any, RJSFSchema, any>,
+    event: FormEvent<any>
+  ) => {
+    console.log("Data submitted: ", data.formData);
+
+    formRef.current.reset();
+    setDialog(true);
+    setTimeout(() => {
+      setDialog(false);
+    }, 3000);
   };
 
-  const log = (type: string) => console.log.bind(console, type);
   return (
-    <Form
-      schema={schema}
-      validator={validator}
-      onChange={log("changed")}
-      onSubmit={log("submitted")}
-      onError={log("errors")}
-    />
+    <>
+      <ThemeProvider theme={whiteTheme}>
+        <Form
+          schema={schema}
+          ref={formRef}
+          validator={validator}
+          onSubmit={onSubmit}
+          uiSchema={uiSchema}
+        />
+      </ThemeProvider>
+      <SuccessDialog dialog={dialog} setDialog={setDialog} />
+    </>
   );
 };

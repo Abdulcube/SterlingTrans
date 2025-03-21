@@ -10,11 +10,12 @@ export const Theme = ({ children }: { children: React.ReactNode }) => {
       light: {
         palette: {
           primary: {
-            main: "#1976d2", // Change this to your desired primary color
+            main: "#EDE8D0", // Change this to your desired primary color
           },
           background: {
-            default: "#f5f5f5", // Change this to your desired background color
+            default: "#EDE8D0", // Change this to your desired background color
           },
+        
         },
       },
       dark: {
