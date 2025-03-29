@@ -8,6 +8,7 @@
     "@fontsource/roboto": "^5.1.1",
     "@mui/icons-material": "^6.4.7",
     "@mui/material": "^6.4.2",
+    "@react-google-maps/api": "^2.20.6",
     "@rjsf/core": "^5.24.2",
     "@rjsf/material-ui": "^5.24.2",
     "@rjsf/utils": "^5.24.2",

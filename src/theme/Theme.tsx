@@ -14,6 +14,7 @@ export const Theme = ({ children }: { children: React.ReactNode }) => {
           },
           background: {
             default: "#EDE8D0", // Change this to your desired background color
+            paper: "#D3D3D3", 
           },
         
         },
@@ -23,8 +24,11 @@ export const Theme = ({ children }: { children: React.ReactNode }) => {
           primary: {
             main: "#90caf9", // Change this to your desired primary color for dark mode
           },
+          secondary: {
+            main: '#D3D3D3', // Your secondary color
+          },
           background: {
-            default: "#121212", // Change this to your desired background color for dark mode
+            default: "#121212",
           },
         },
       },

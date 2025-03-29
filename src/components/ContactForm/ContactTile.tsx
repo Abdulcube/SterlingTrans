@@ -1,16 +1,18 @@
 import { TileWrapper } from "../Content";
 import { ImageFormat } from "../Content/subcomponent";
-import exampleImage from "../../assets/exampleImage.png";
-import { Stack } from "@mui/material";
+import LandingPage from "../../assets/LandingPage.png";
+import { Box, Stack } from "@mui/material";
 import { ContactForm } from "./Contact";
 
 export const ContactTile = () => {
   return (
     <TileWrapper>
-      <Stack direction="row" spacing={2}>
-        <ImageFormat imageAlt="test image" imageSrc={exampleImage} />
-        <ContactForm />
-      </Stack>
+      <Box sx={{ backgroundColor: "secondary.main" }}>
+        <Stack direction="row" spacing={2}>
+          <ImageFormat imageAlt="test image" imageSrc={LandingPage} />
+          <ContactForm />
+        </Stack>
+      </Box>
     </TileWrapper>
   );
 };

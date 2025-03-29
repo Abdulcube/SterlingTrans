@@ -8,6 +8,7 @@ export const TileWrapper = ({ children }: { children: React.ReactNode }) => {
         sx={{
           display: "flex",
           alignItems: "center",
+          justifyContent: "center",
           gap: 4,
           py: 4,
           backgroundColor: "background.paper",

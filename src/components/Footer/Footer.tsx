@@ -18,7 +18,7 @@ function Copyright() {
         target="_blank"
         rel="noopener"
       >
-        AbdulSource
+        Abdul.Source
       </Link>
       &nbsp;
       {new Date().getFullYear()}
