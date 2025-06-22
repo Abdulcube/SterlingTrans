@@ -20,13 +20,13 @@ export const Contact = () => {
           gap: 1,
         }}
       >
-        <Typography variant="body2" sx={{ fontWeight: "medium" }}>
+        <Typography variant="body2" color="secondary.main" sx={{ fontWeight: "medium" }}>
           Navigate
         </Typography>
         <Link
           component={RouterLink}
           to="/"
-          color="text.secondary"
+          color="secondary.main"
           variant="body2"
         >
           Home
@@ -34,7 +34,7 @@ export const Contact = () => {
         <Link
           component={RouterLink}
           to="/about"
-          color="text.secondary"
+          color="secondary.main"
           variant="body2"
         >
           About Us
@@ -42,7 +42,7 @@ export const Contact = () => {
         <Link
           component={RouterLink}
           to="/services"
-          color="text.secondary"
+          color="secondary.main"
           variant="body2"
         >
           Services
@@ -50,7 +50,7 @@ export const Contact = () => {
         <Link
           component={RouterLink}
           to="/contact"
-          color="text.secondary"
+          color="secondary.main"
           variant="body2"
         >
           Contact
@@ -63,16 +63,16 @@ export const Contact = () => {
           gap: 1,
         }}
       >
-        <Typography variant="body2" sx={{ fontWeight: "medium" }}>
+        <Typography variant="body2" color="secondary.main" sx={{ fontWeight: "medium" }}>
           Locations
         </Typography>
-        <Link color="text.secondary" variant="body2" href="#">
+        <Link color="secondary.main" variant="body2" href="Locations">
           Dallas
         </Link>
-        <Link color="text.secondary" variant="body2" href="#">
+        <Link color="secondary.main" variant="body2" href="Locations">
           Houston
         </Link>
-        <Link color="text.secondary" variant="body2" href="#">
+        <Link color="secondary.main" variant="body2" href="Locations">
           New Jersey
         </Link>
       </Box>
@@ -84,13 +84,13 @@ export const Contact = () => {
           gap: 1,
         }}
       >
-        <Typography variant="body2" sx={{ fontWeight: "medium" }}>
+        <Typography variant="body2" color="secondary.main" sx={{ fontWeight: "medium" }}>
           Contact
         </Typography>
-        <Link color="text.secondary" variant="body2" href="#">
+        <Link color="secondary.main" variant="body2" href="#">
           +1(800) 347-0577
         </Link>
-        <Link color="text.secondary" variant="body2" href="#">
+        <Link color="secondary.main" variant="body2" href="#">
           Dallas@ridesterling.com
         </Link>
       </Box>

@@ -1,41 +1,30 @@
-import { IChangeEvent } from "@rjsf/core";
-import Form from "@rjsf/material-ui";
-import { RJSFSchema } from "@rjsf/utils";
-import validator from "@rjsf/validator-ajv8";
-import { FormEvent, useRef, useState } from "react";
-import { schema, uiSchema } from "./constants";
+import { useState } from "react";
 import { SuccessDialog } from "./SuccessDialog";
-import { Box, ThemeProvider } from "@mui/material";
-import { whiteTheme } from "../../theme";
+import { Box, Paper } from "@mui/material";
+import { ContactMuiForm } from "./Form";
 
 export const ContactForm = () => {
-  const formRef = useRef<any>(null);
   const [dialog, setDialog] = useState(false);
 
-  const onSubmit = async (
-    data: IChangeEvent<any, RJSFSchema, any>,
-    event: FormEvent<any>
+  const onSubmit = (
+    data: any
   ) => {
-    console.log("Data submitted: ", data.formData);
+    console.log("Data submitted: ", data);
     fetch(`${process.env.REACT_APP_API_BASE_URL}/api/contact`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(data.formData),
-    }).then((res) => res.json())
-    .then((data) => console.log(data.message));
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((resData) => console.log(resData.message));
 
-    formRef.current.reset();
     setDialog(true);
     setTimeout(() => {
       setDialog(false);
     }, 3000);
   };
-
-  // const [index, setIndex] = useState();
-  // console.log(process.env.REACT_APP_API_BASE_URL);
-
 
   return (
     <Box
@@ -44,16 +33,17 @@ export const ContactForm = () => {
         padding: 2,
       }}
     >
-      <ThemeProvider theme={whiteTheme}>
-        <Form
-          schema={schema}
-          ref={formRef}
-          validator={validator}
-          onSubmit={onSubmit}
-          uiSchema={uiSchema}
-        />
-      </ThemeProvider>
-      <SuccessDialog dialog={dialog} setDialog={setDialog} />
+      <Paper
+        elevation={4}
+        sx={{
+          flex: 1,
+          borderRadius: "24px",
+          padding: 3,
+        }}
+      >
+        <ContactMuiForm onSubmit={onSubmit}/>
+        <SuccessDialog dialog={dialog} setDialog={setDialog} />
+      </Paper>
     </Box>
   );
 };

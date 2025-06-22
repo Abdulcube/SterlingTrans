@@ -6,33 +6,37 @@ import {
 
 export const Theme = ({ children }: { children: React.ReactNode }) => {
   const theme = createTheme({
-    colorSchemes: {
-      light: {
-        palette: {
-          primary: {
-            main: "#EDE8D0", // Change this to your desired primary color
-          },
-          background: {
-            default: "#EDE8D0", // Change this to your desired background color
-            paper: "#D3D3D3", 
-          },
-        
-        },
-      },
-      dark: {
-        palette: {
-          primary: {
-            main: "#90caf9", // Change this to your desired primary color for dark mode
-          },
-          secondary: {
-            main: '#D3D3D3', // Your secondary color
-          },
-          background: {
-            default: "#121212",
-          },
-        },
-      },
+    typography: {
+    fontFamily: `'Product Sans', 'Roboto', 'Helvetica', 'Arial', sans-serif`,
     },
+    palette: {
+      mode: 'light',           // 'light' | 'dark'
+      primary: {
+        main: '#000000',      // Main color everything
+        light: '#000000',
+        contrastText: '#fff',
+      },
+      secondary: {
+        main: '#c7c7c7',       // used by <Button color="secondary" />
+        contrastText: '#fff',
+      },
+      error: {
+        main: '#d32f2f',
+      },
+      warning: {
+        main: '#ed6c02',
+      },
+      info: {
+        main: '#0b9cdd',
+      },
+      success: {
+        main: '#2e7d32',
+      },
+      background: {
+        default: '#fafafa',   // page background
+        paper: '#fff',        // surfaces like <Paper>
+      },
+  }
   });
   return (
     <CSS_PROVIDER theme={theme}>

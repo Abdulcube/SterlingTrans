@@ -12,11 +12,7 @@ const ElevationScroll = ({children}: {children: React.ReactNode}) => {
 
   return children
     ? React.cloneElement(children as React.ReactElement, {
-        elevation: trigger ? 4 : 0,
-        sx: {
-          backgroundColor: trigger ? "dark.pallette.primary.main" : "transparent", // Change background dynamically
-          transition: "background-color 0.3s ease", // Smooth transition
-        },
+        elevation: trigger ? 4 : 0
       })
     : null;
 }

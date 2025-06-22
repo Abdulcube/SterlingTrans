@@ -39,7 +39,6 @@ export const CenteredTextBoxDesc = ({
         </Typography>
         <Button
           variant="contained"
-          color="primary"
           onClick={onButtonClick}
           // sx={{ alignSelf: "flex-start", mt: 2 }}
         >

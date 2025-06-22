@@ -5,3 +5,4 @@ export * from "./ServiceTile";
 export * from "./FleetTile";
 export * from "./LocationsTile";
 export * from "./HeroSection";
+export * from './subcomponent';

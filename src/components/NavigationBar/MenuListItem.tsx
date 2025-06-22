@@ -12,8 +12,17 @@ const MenuListItem = ({
   key: number;
 }) => {
   return (
-    <ListItem key={key} component={Link} to={path}>
-      <ListItemText color="white" primary={text} />
+    <ListItem
+      key={key}
+      component={Link}
+      to={path}
+      sx={{
+        color: "white",
+        textDecoration: "none",
+        "& .MuiListItemText-primary": { color: "white" },
+      }}
+    >
+      <ListItemText primary={text} />
     </ListItem>
   );
 };

@@ -5,10 +5,12 @@ export const TextBoxDesc = ({
   title,
   description,
   route,
+  button,
 }: {
   title: string;
   description: string;
   route: string;
+  button?: string;
 }) => {
   const navigate = useNavigate();
   const onButtonClick = () => {
@@ -36,7 +38,7 @@ export const TextBoxDesc = ({
         onClick={onButtonClick}
         sx={{ alignSelf: "flex-start", mt: 2 }}
       >
-        Go to {route}
+        {button ? button : route}
       </Button>
     </Box>
   );

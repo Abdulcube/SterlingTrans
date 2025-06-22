@@ -15,9 +15,9 @@ export const WebPage = ({ children }: { children: React.ReactNode }) => {
             maxWidth={false}
             disableGutters
             sx={{
-              width: "90%",
+              width: "80%",
               margin: "0",
-              backgroundColor: "#5E5E5E",
+              backgroundColor: "#fafafa",
             }}
           >
             <Box paddingTop={10}>
@@ -29,7 +29,14 @@ export const WebPage = ({ children }: { children: React.ReactNode }) => {
               </ScrollTop>
             </Box>
           </Container>
-          <Footer />
+          <Box
+            display={"flex"}
+            height="100vh"
+            width={"100%"}
+            sx={{ backgroundColor: "primary.main" }}
+          >
+            <Footer />
+          </Box>
         </Stack>
       </Box>
     </>

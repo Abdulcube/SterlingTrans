@@ -1,7 +1,7 @@
 import express from "express";
 
 import dotenv from "dotenv";
-import cors from "cors"; 
+import cors from "cors";
 
 import nodemailer from "nodemailer";
 dotenv.config();
@@ -13,20 +13,22 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/api/hello", (req, res) => {
+  console.log("---> Hello Endpoint <---");
   res.json({ message: "Hello from the backend!" });
 });
 
 app.get("/api/weather", async (req, res) => {
+  console.log("---> Weather Endpoint <---");
   res.json({ message: process.env.WEATHER_API_KEY });
 });
 
 app.post("/api/contact", async (req, res) => {
+  console.log("---> Contact Form Submission <---");
   console.log(req.body);
-  const mailOptions = {
+  let mailOptions = {
     from: process.env.EMAIL_ADDRESS,
     to: "abdulrahman.shaaeldin@gmail.com",
-    subject: "Sterling Website Contact: " + req.body.name,
-
+    subject: `Sterling Website ${req.body.location} Contact: ${req.body.name}`,
     text: `Name: ${req.body.name}\nPhone: ${req.body.phone}\nEmail: ${req.body.email}\nMessage: ${req.body.message}`,
   };
 

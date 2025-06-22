@@ -9,8 +9,6 @@ export const LocationsTile = () => {
       <Stack direction="row" spacing={3}>
         <CenteredTextBoxDesc title="Houston" description="Description of the Suburban." route="fleet" />
         <CenteredTextBoxDesc title="Dallas" description="Description of the Suburban." route="fleet" />
-        <CenteredTextBoxDesc title="New Jersey" description="Description of the Suburban." route="fleet" />
-
       </Stack>
     </TileWrapper>
   );

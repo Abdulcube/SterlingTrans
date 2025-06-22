@@ -10,10 +10,10 @@ import { Contact } from "./Contact";
 
 function Copyright() {
   return (
-    <Typography variant="body2" sx={{ color: "text.secondary", mt: 1 }}>
+    <Typography variant="body2" sx={{ color: "secondary.main", mt: 1 }}>
       {"Copyright © "}
       <Link
-        color="text.secondary"
+        color="secondary.main"
         href="https://github.com/Abdulcube/"
         target="_blank"
         rel="noopener"
@@ -46,17 +46,17 @@ export const Footer = () => {
           pt: { xs: 4, sm: 8 },
           width: "100%",
           borderTop: "1px solid",
-          borderColor: "divider",
+          borderColor: "white",
         }}
       >
         <div>
-          <Link color="text.secondary" variant="body2" href="#">
+          <Link color="secondary.main" variant="body2" href="#">
             Privacy Policy
           </Link>
           <Typography sx={{ display: "inline", mx: 0.5, opacity: 0.5 }}>
             &nbsp;•&nbsp;
           </Typography>
-          <Link color="text.secondary" variant="body2" href="#">
+          <Link color="secondary.main" variant="body2" href="#">
             Terms of Service
           </Link>
           <Copyright />
@@ -65,7 +65,7 @@ export const Footer = () => {
           direction="row"
           spacing={1}
           useFlexGap
-          sx={{ justifyContent: "left", color: "text.secondary" }}
+          sx={{ justifyContent: "left", color: "secondary.main" }}
         >
           <IconButton
             color="inherit"

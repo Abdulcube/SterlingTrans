@@ -1,7 +1,13 @@
 import { Container, Box } from "@mui/material";
 import React from "react";
 
-export const TileWrapper = ({ children }: { children: React.ReactNode }) => {
+export const TileWrapper = ({
+  title,
+  children,
+}: {
+  title?: string;
+  children: React.ReactNode;
+}) => {
   return (
     <Container maxWidth="xl">
       <Box
@@ -14,7 +20,10 @@ export const TileWrapper = ({ children }: { children: React.ReactNode }) => {
           backgroundColor: "background.paper",
         }}
       >
-        {children}
+        <Box width="100%">
+          {/* {title && <Typography variant="h3" sx={{paddingLeft:2}}>{title}</Typography>} */}
+          {children}
+        </Box>
       </Box>
     </Container>
   );

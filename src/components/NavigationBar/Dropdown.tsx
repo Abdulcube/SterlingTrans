@@ -17,8 +17,9 @@ export const BasicMenu = ({
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = (path: string) => {
+  const handleClose = (path = "") => {
     setAnchorEl(null);
+    if (!path) return;
     navigate(`/${path}`);
   };
 
@@ -41,7 +42,7 @@ export const BasicMenu = ({
         id="basic-menu"
         anchorEl={anchorEl}
         open={open}
-        onClose={handleClose}
+        onClose={() => handleClose()}
       >
         {items.map((item, key) => (
           <MenuItem
