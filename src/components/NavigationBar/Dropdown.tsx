@@ -30,7 +30,11 @@ export const BasicMenu = ({
         edge="start"
         color="inherit"
         aria-label="menu"
-        sx={{ mr: 2 }}
+        sx={{
+          minWidth: "44px",
+          minHeight: "44px",
+          mr: { xs: 1, sm: 2 },
+        }}
         aria-controls={open ? "basic-menu" : undefined}
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
@@ -43,12 +47,21 @@ export const BasicMenu = ({
         anchorEl={anchorEl}
         open={open}
         onClose={() => handleClose()}
+        MenuListProps={{
+          sx: { display: "flex", flexDirection: "column" },
+        }}
       >
         {items.map((item, key) => (
           <MenuItem
             key={key}
             onClick={() => {
               handleClose(item.path);
+            }}
+            sx={{
+              minHeight: "44px",
+              minWidth: "44px",
+              padding: { xs: 1, sm: 1.5 },
+              fontSize: { xs: "0.875rem", sm: "1rem" },
             }}
           >
             {item.text}

@@ -29,21 +29,26 @@ function Copyright() {
 export const Footer = () => {
   return (
     <Container
+      maxWidth="xl"
       sx={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        gap: { xs: 4, sm: 8 },
-        py: { xs: 8, sm: 10 },
-        textAlign: { sm: "center", md: "left" },
+        gap: { xs: 3, sm: 4, md: 8 },
+        py: { xs: 4, sm: 6, md: 10 },
+        px: { xs: 2, sm: 3, md: 4 },
+        textAlign: { xs: "center", md: "left" },
       }}
     >
       <Contact />
       <Box
         sx={{
           display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
           justifyContent: "space-between",
-          pt: { xs: 4, sm: 8 },
+          alignItems: { xs: "center", sm: "flex-start" },
+          gap: { xs: 2, sm: 0 },
+          pt: { xs: 3, sm: 4, md: 8 },
           width: "100%",
           borderTop: "1px solid",
           borderColor: "white",

@@ -52,10 +52,18 @@ export const ContactMuiForm = ({
 
   return (
     <form onSubmit={handleSubmit}>
-      <Typography variant="h5" gutterBottom>
+      <Typography
+        variant="h5"
+        gutterBottom
+        sx={{ fontSize: { xs: "1.25rem", sm: "1.5rem" } }}
+      >
         Contact Us
       </Typography>
-      <Typography variant="body2" gutterBottom>
+      <Typography
+        variant="body2"
+        gutterBottom
+        sx={{ fontSize: { xs: "0.875rem", sm: "1rem" } }}
+      >
         Please provide the following information with any questions or for a
         quote.
       </Typography>
@@ -123,7 +131,12 @@ export const ContactMuiForm = ({
         type="submit"
         variant="contained"
         color="primary"
-        sx={{ mt: 2 }}
+        sx={{
+          mt: { xs: 1.5, sm: 2 },
+          minHeight: "44px",
+          minWidth: "88px",
+          px: { xs: 2, sm: 3 },
+        }}
         disabled={submitted}
       >
         Submit

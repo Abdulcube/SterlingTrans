@@ -1,10 +1,18 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, Stack, useScrollTrigger } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Stack,
+  useScrollTrigger,
+  Box,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import MenuList from "./MenuList";
-import {BasicMenu} from "./Dropdown";
+import { BasicMenu } from "./Dropdown";
 
-
-const ElevationScroll = ({children}: {children: React.ReactNode}) => {
+const ElevationScroll = ({ children }: { children: React.ReactNode }) => {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
@@ -12,10 +20,10 @@ const ElevationScroll = ({children}: {children: React.ReactNode}) => {
 
   return children
     ? React.cloneElement(children as React.ReactElement, {
-        elevation: trigger ? 4 : 0
+        elevation: trigger ? 4 : 0,
       })
     : null;
-}
+};
 
 const NavBar = ({
   menuItems = [
@@ -28,28 +36,59 @@ const NavBar = ({
 }: {
   menuItems?: { text: string; path: string }[];
 }) => {
-  return (
-    <ElevationScroll >
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-    <AppBar>
-      <Toolbar variant="dense" >
-        <Stack
-          direction="row"
+  return (
+    <ElevationScroll>
+      <AppBar>
+        <Toolbar
+          variant="dense"
           sx={{
-            justifyContent: "space-around",
-            alignItems: "center",
-            width: "100%",
+            padding: { xs: 1, sm: 2 },
+            minHeight: { xs: "56px", sm: "64px" },
           }}
-          spacing={2}
         >
-          <Typography variant="h6" component="div" sx={{ flexGrow: 0, mr: 4 }}>
-            Sterling Trans
-          </Typography>
-          <MenuList items={menuItems} />
-          <BasicMenu items={menuItems}/>
-        </Stack>
-      </Toolbar>
-    </AppBar>
+          <Stack
+            direction="row"
+            sx={{
+              justifyContent: isMobile ? "space-between" : "flex-start",
+              alignItems: "center",
+              width: "100%",
+              position: "relative",
+            }}
+            spacing={{ xs: 0, sm: 2 }}
+          >
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{
+                flexGrow: 0,
+                mr: { xs: 1, sm: 2, md: 4 },
+                fontSize: { xs: "1rem", sm: "1.25rem" },
+              }}
+            >
+              Sterling Trans
+            </Typography>
+
+            {!isMobile ? (
+              <Box
+                sx={{
+                  position: "absolute",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <MenuList items={menuItems} />
+              </Box>
+            ) : (
+              <BasicMenu items={menuItems} />
+            )}
+          </Stack>
+        </Toolbar>
+      </AppBar>
     </ElevationScroll>
   );
 };

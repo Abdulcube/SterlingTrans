@@ -6,9 +6,7 @@ import { ContactMuiForm } from "./Form";
 export const ContactForm = () => {
   const [dialog, setDialog] = useState(false);
 
-  const onSubmit = (
-    data: any
-  ) => {
+  const onSubmit = (data: any) => {
     console.log("Data submitted: ", data);
     fetch(`${process.env.REACT_APP_API_BASE_URL}/api/contact`, {
       method: "POST",
@@ -30,18 +28,18 @@ export const ContactForm = () => {
     <Box
       sx={{
         flex: 1,
-        padding: 2,
+        padding: { xs: 1, sm: 2 },
       }}
     >
       <Paper
         elevation={4}
         sx={{
           flex: 1,
-          borderRadius: "24px",
-          padding: 3,
+          borderRadius: { xs: "16px", sm: "24px" },
+          padding: { xs: 2, sm: 3 },
         }}
       >
-        <ContactMuiForm onSubmit={onSubmit}/>
+        <ContactMuiForm onSubmit={onSubmit} />
         <SuccessDialog dialog={dialog} setDialog={setDialog} />
       </Paper>
     </Box>
