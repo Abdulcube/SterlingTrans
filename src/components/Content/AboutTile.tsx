@@ -9,7 +9,7 @@ export const AboutTile = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <TileWrapper title="About Us">
+    <TileWrapper>
       <Stack
         direction={{ xs: "column", sm: "row" }}
         spacing={{ xs: 2, sm: 3 }}

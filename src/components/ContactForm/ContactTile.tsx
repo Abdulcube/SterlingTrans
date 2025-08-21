@@ -2,7 +2,7 @@ import { TileWrapper } from "../Content";
 import { ImageFormat } from "../Content/subcomponent";
 import LandingPage from "../../assets/LandingPage.png";
 import { Box, Stack } from "@mui/material";
-import { ContactForm } from "./Contact";
+import { ContactForm } from "./ContactForm";
 
 export const ContactTile = () => {
   return (

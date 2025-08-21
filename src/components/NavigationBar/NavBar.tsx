@@ -3,7 +3,6 @@ import {
   AppBar,
   Toolbar,
   Typography,
-  Stack,
   useScrollTrigger,
   Box,
   useMediaQuery,
@@ -49,44 +48,53 @@ const NavBar = ({
             minHeight: { xs: "56px", sm: "64px" },
           }}
         >
-          <Stack
-            direction="row"
+          <Box
             sx={{
-              justifyContent: isMobile ? "space-between" : "flex-start",
+              display: "flex",
+              justifyContent: "space-between",
               alignItems: "center",
               width: "100%",
-              position: "relative",
             }}
-            spacing={{ xs: 0, sm: 2 }}
           >
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{
-                flexGrow: 0,
-                mr: { xs: 1, sm: 2, md: 4 },
-                fontSize: { xs: "1rem", sm: "1.25rem" },
-              }}
-            >
-              Sterling Trans
-            </Typography>
-
-            {!isMobile ? (
-              <Box
+            {/* Left section - Always visible */}
+            <Box sx={{ pl: { xs: 1, sm: 2, md: 3 } }}>
+              <Typography
+                variant="h6"
+                component="div"
                 sx={{
-                  position: "absolute",
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  display: "flex",
-                  justifyContent: "center",
+                  fontSize: { xs: "1rem", sm: "1.25rem" },
                 }}
               >
-                <MenuList items={menuItems} />
+                Sterling Trans
+              </Typography>
+            </Box>
+
+            {/* Center section - Only visible on desktop */}
+            <Box
+              sx={{
+                flex: 1,
+                display: "flex",
+                justifyContent: "center",
+                visibility: isMobile ? "hidden" : "visible",
+                position: isMobile ? "absolute" : "relative", // Prevent taking space on mobile
+              }}
+            >
+              <MenuList items={menuItems} />
+            </Box>
+
+            {/* Right section - BasicMenu on mobile, empty placeholder on desktop */}
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "flex-end",
+                minWidth: "48px", // Ensure consistent width even when hidden
+              }}
+            >
+              <Box sx={{ visibility: isMobile ? "visible" : "hidden" }}>
+                <BasicMenu items={menuItems} />
               </Box>
-            ) : (
-              <BasicMenu items={menuItems} />
-            )}
-          </Stack>
+            </Box>
+          </Box>
         </Toolbar>
       </AppBar>
     </ElevationScroll>

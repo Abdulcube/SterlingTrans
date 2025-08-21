@@ -6,7 +6,7 @@ import { Stack } from "@mui/material";
 import { service } from "./constants";
 export const ServiceTile = () => {
   return (
-    <TileWrapper title="Service Tile">
+    <TileWrapper>
       <Stack direction="row" spacing={3} alignItems="center" padding={2}>
         <TextBoxDesc
           title="Our Commitment to Service"

@@ -1,0 +1,1 @@
+export { RefactoredContactForm } from "./ContactForm";

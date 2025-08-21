@@ -1,66 +1,113 @@
 // HeroSection.tsx
 import React from "react";
-import { Box, Typography, Stack } from "@mui/material";
+import { Box, Typography, Stack, Button, Container } from "@mui/material";
 import LandingPage from "../../assets/LandingPage.png";
+import { useNavigate } from "react-router-dom";
+
 export const HeroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <Box
       sx={{
-        height: { xs: "60vh", sm: "80vh", md: "100vh" },
+        height: { xs: "80vh", sm: "90vh", md: "100vh" },
         width: "100%",
-        backgroundImage: LandingPage, // Change to your image path
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(${LandingPage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         position: "relative",
         color: "#fff",
+        display: "flex",
+        alignItems: "center",
       }}
     >
-      <Stack
-        sx={{
-          height: "100%",
-          position: "relative",
-          zIndex: 2,
-          px: { xs: 2, sm: 3, md: 4 },
-        }}
-        alignItems="center"
-      >
-        {/* Left Column: Logo */}
-        <Stack sx={{ textAlign: "center" }}>
-          <Box
-            component="img"
-            src="/your-logo.png" // Replace with your logo path
-            alt="Logo"
-            sx={{ width: "150px", maxWidth: "80%", mb: 2 }}
-          />
-        </Stack>
-
-        {/* Right Column: Text */}
+      {/* Dark overlay for better text visibility */}
+      <Container maxWidth="lg">
         <Stack
+          spacing={{ xs: 3, sm: 5 }}
           sx={{
             textAlign: { xs: "center", md: "left" },
-            padding: { xs: 2, sm: 3, md: 4 },
+            maxWidth: { xs: "100%", md: "60%" },
           }}
         >
           <Typography
-            variant="h2"
+            variant="h1"
             sx={{
-              fontWeight: "bold",
-              fontSize: { xs: "2rem", sm: "3rem", md: "3.75rem" },
+              fontWeight: 700,
+              fontSize: { xs: "2.5rem", sm: "3.5rem", md: "4.5rem" },
+              lineHeight: { xs: 1.2, md: 1.1 },
+              letterSpacing: "-0.02em",
             }}
           >
-            Sterling Trans
+            Reliable Transport Anytime, Anywhere
           </Typography>
+
           <Typography
             variant="h5"
             sx={{
-              mt: { xs: 1, sm: 2 },
               fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
+              fontWeight: 400,
+              maxWidth: "90%",
+              mx: { xs: "auto", md: 0 },
+              opacity: 0.9,
             }}
           >
-            Premium Transportation Services
+            24/7 airport pickups, scheduled drop-offs, and premium vehicles.
           </Typography>
+
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            spacing={{ xs: 2, sm: 3 }}
+            sx={{
+              mt: { xs: 3, sm: 5 },
+              width: "100%",
+              justifyContent: { xs: "center", md: "flex-start" },
+            }}
+          >
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              onClick={() => navigate("/contact")}
+              sx={{
+                py: { xs: 1, sm: 1.5 },
+                px: { xs: 3, sm: 4 },
+                fontSize: { xs: "1rem", sm: "1.1rem" },
+                fontWeight: 600,
+                borderRadius: "4px",
+                textTransform: "none",
+                minWidth: "160px",
+                minHeight: "48px",
+              }}
+            >
+              Book a Ride
+            </Button>
+            <Button
+              variant="outlined"
+              size="large"
+              onClick={() => navigate("/services")}
+              sx={{
+                py: { xs: 1, sm: 1.5 },
+                px: { xs: 3, sm: 4 },
+                fontSize: { xs: "1rem", sm: "1.1rem" },
+                fontWeight: 600,
+                borderRadius: "4px",
+                textTransform: "none",
+                minWidth: "160px",
+                minHeight: "48px",
+                borderColor: "white",
+                color: "white",
+                "&:hover": {
+                  borderColor: "white",
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                },
+              }}
+            >
+              Learn More
+            </Button>
+          </Stack>
         </Stack>
-      </Stack>
+      </Container>
     </Box>
   );
 };

@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import { Facebook, Instagram, LinkedIn } from "@mui/icons-material";
 import { Contact } from "./Contact";
 
-function Copyright() {
+const Copyright = () => {
   return (
     <Typography variant="body2" sx={{ color: "secondary.main", mt: 1 }}>
       {"Copyright © "}
