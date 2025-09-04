@@ -21,7 +21,7 @@ export const GoogleMapComponent = () => {
 
   return (
     <LoadScript
-      googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY || ""}
+      googleMapsApiKey={process.env.REACT_APP_API_KEY || ""}
     >
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={6}>
         {locations.map((location, idx) => (
