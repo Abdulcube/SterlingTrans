@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import MenuList from "./MenuList";
 import { BasicMenu } from "./Dropdown";
+import { useNavigate } from "react-router";
 
 const ElevationScroll = ({ children }: { children: React.ReactNode }) => {
   const trigger = useScrollTrigger({
@@ -36,7 +37,7 @@ const NavBar = ({
 }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-
+    let navigate = useNavigate();
   return (
     <ElevationScroll>
       <AppBar>
@@ -60,6 +61,7 @@ const NavBar = ({
               <img
                 src="/sterling-transportation-logo.png"
                 alt="Sterling Transportation"
+                onClick={() => navigate("/")}
                 style={{
                   width: isMobile ? "180px" : "220px",
                   height: "auto",

@@ -17,9 +17,9 @@ export const BasicMenu = ({
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = (path = "") => {
+  const handleClose = (path?: string) => {
     setAnchorEl(null);
-    if (!path) return;
+    if (path === undefined) return;
     navigate(`/${path}`);
   };
 
