@@ -2,7 +2,6 @@ import React from "react";
 import {
   AppBar,
   Toolbar,
-  Typography,
   useScrollTrigger,
   Box,
   useMediaQuery,
@@ -58,15 +57,15 @@ const NavBar = ({
           >
             {/* Left section - Always visible */}
             <Box sx={{ pl: { xs: 1, sm: 2, md: 3 } }}>
-              <Typography
-                variant="h6"
-                component="div"
-                sx={{
-                  fontSize: { xs: "1rem", sm: "1.25rem" },
+              <img
+                src="/sterling-transportation-logo.png"
+                alt="Sterling Transportation"
+                style={{ 
+                  width: isMobile ? "180px" : "220px", 
+                  height: "auto",
+                  maxHeight: isMobile ? "45px" : "55px"
                 }}
-              >
-                Sterling Trans
-              </Typography>
+              />
             </Box>
 
             {/* Center section - Only visible on desktop */}

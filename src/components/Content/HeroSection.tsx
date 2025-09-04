@@ -21,13 +21,13 @@ export const HeroSection = () => {
         alignItems: "center",
       }}
     >
-      {/* Dark overlay for better text visibility */}
       <Container maxWidth="lg">
         <Stack
           spacing={{ xs: 3, sm: 5 }}
           sx={{
             textAlign: { xs: "center", md: "left" },
-            maxWidth: { xs: "100%", md: "60%" },
+            maxWidth: { xs: "100%", md: "100%" },
+            px: { xs: 2, sm: 3, md: 4 },
           }}
         >
           <Typography
@@ -47,7 +47,7 @@ export const HeroSection = () => {
             sx={{
               fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
               fontWeight: 400,
-              maxWidth: "90%",
+              maxWidth: { xs: "100%", md: "70%" },
               mx: { xs: "auto", md: 0 },
               opacity: 0.9,
             }}

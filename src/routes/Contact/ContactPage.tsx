@@ -14,7 +14,7 @@ import {
 } from "@mui/icons-material";
 import { RefactoredContactForm } from "./components";
 import { GoogleMapComponent } from "../../components/Maps/GoogleMap";
-import { ContactItem, ContactInfoStrip } from "../../common";
+import { ContactItem } from "../../common";
 
 export const ContactPage = () => {
   const theme = useTheme();

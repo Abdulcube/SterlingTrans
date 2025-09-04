@@ -14,10 +14,10 @@ import { useEffect } from "react";
 
 export const HomePage = () => {
   const { data, fetchData } = useGetRequest();
-  fetchData();
   useEffect(() => {
+    fetchData();
     console.log("Initial BE request: ", data);
-  }, [data]);
+  }, [fetchData, data]);
   return (
     <Box>
       <HeroSection />
