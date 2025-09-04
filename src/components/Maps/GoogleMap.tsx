@@ -1,11 +1,10 @@
 // components/GoogleMap.tsx
 import React from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import { useMediaQuery, useTheme } from "@mui/material";
 
 const center = {
-  lat: 31.9686, // Center of Texas between Houston and Dallas
-  lng: -99.9018,
+  lat: 31.27, // Center of Texas between Houston and Dallas
+  lng: -96.08,
 };
 
 const locations = [
@@ -14,12 +13,9 @@ const locations = [
 ];
 
 export const GoogleMapComponent = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-
   const containerStyle = {
     width: "100%",
-    height: isMobile ? "300px" : "400px",
+    height: "100%",
     borderRadius: "8px",
   };
 

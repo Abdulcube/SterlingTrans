@@ -60,10 +60,10 @@ const NavBar = ({
               <img
                 src="/sterling-transportation-logo.png"
                 alt="Sterling Transportation"
-                style={{ 
-                  width: isMobile ? "180px" : "220px", 
+                style={{
+                  width: isMobile ? "180px" : "220px",
                   height: "auto",
-                  maxHeight: isMobile ? "45px" : "55px"
+                  maxHeight: isMobile ? "45px" : "55px",
                 }}
               />
             </Box>
