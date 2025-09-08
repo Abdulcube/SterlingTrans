@@ -7,7 +7,6 @@
 - Have a Link/QR code to direct potential customers
 - Create functionality to capture future customers' information.
 ### Requirements:
-> Example site: https://austinpremiumlimousine.com/
 - Home landing page
 - About page with company
     - principles and promises
