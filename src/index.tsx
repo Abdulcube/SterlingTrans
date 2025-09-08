@@ -1,17 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { App } from "./App";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { WebPage } from "./common";
 import { Theme } from "./theme";
 
 ReactDOM.render(
   <Theme>
-    <BrowserRouter>
+    <HashRouter>
       <WebPage>
         <App />
       </WebPage>
-    </BrowserRouter>
+    </HashRouter>
   </Theme>,
   document.getElementById("root")
 );

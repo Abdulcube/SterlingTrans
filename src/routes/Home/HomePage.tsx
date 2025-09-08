@@ -3,7 +3,6 @@ import {
   AboutTile,
   FleetTile,
   HeroSection,
-  LocationsTile,
   ReviewTile,
   ServiceTile,
 } from "../../components";
@@ -23,7 +22,7 @@ export const HomePage = () => {
       <HeroSection />
       <AboutTile />
       <ServiceTile />
-      <LocationsTile />
+      {/* <LocationsTile /> */}
       <MapsTile />
       <FleetTile />
       <ReviewTile />

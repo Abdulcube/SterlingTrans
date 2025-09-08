@@ -13,8 +13,6 @@ import {
   FlightTakeoff as AirportIcon,
   TrackChanges as TrackingIcon,
   Assignment as ManifestIcon,
-  DirectionsCar as TransportIcon,
-  MyLocation as MeetupIcon,
 } from "@mui/icons-material";
 import { Link as RouterLink } from "react-router-dom";
 
@@ -176,28 +174,28 @@ export const ServiceTile = () => {
       primaryAction: "View Services",
       primaryRoute: "/services",
     },
-    {
-      icon: <TransportIcon fontSize="large" />,
-      title: "General Transport",
-      benefit: "Point-to-point transportation for any occasion",
-      bullets: [
-        "Corporate events and meetings",
-        "Special occasions and nights out",
-      ],
-      primaryAction: "Book Now",
-      primaryRoute: "/contact",
-    },
-    {
-      icon: <MeetupIcon fontSize="large" />,
-      title: "Door-to-Door Service",
-      benefit: "Convenient pickup and drop-off at your exact location",
-      bullets: [
-        "Hotel lobby and residence pickup",
-        "Curbside service available",
-      ],
-      primaryAction: "Get Quote",
-      primaryRoute: "/contact",
-    },
+    // {
+    //   icon: <TransportIcon fontSize="large" />,
+    //   title: "General Transport",
+    //   benefit: "Point-to-point transportation for any occasion",
+    //   bullets: [
+    //     "Corporate events and meetings",
+    //     "Special occasions and nights out",
+    //   ],
+    //   primaryAction: "Book Now",
+    //   primaryRoute: "/contact",
+    // },
+    // {
+    //   icon: <MeetupIcon fontSize="large" />,
+    //   title: "Door-to-Door Service",
+    //   benefit: "Convenient pickup and drop-off at your exact location",
+    //   bullets: [
+    //     "Hotel lobby and residence pickup",
+    //     "Curbside service available",
+    //   ],
+    //   primaryAction: "Get Quote",
+    //   primaryRoute: "/contact",
+    // },
   ];
 
   return (

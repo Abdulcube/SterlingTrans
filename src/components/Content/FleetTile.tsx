@@ -210,7 +210,7 @@ export const FleetTile = () => {
       comfort:
         "Spacious luxury SUV perfect for airport transfers and group travel",
       primaryAction: "See Fleet",
-      primaryRoute: "/fleet",
+      primaryRoute: "/services",
     },
     {
       image: Sprinter,
@@ -219,7 +219,7 @@ export const FleetTile = () => {
       luggage: "12-16 large bags",
       comfort: "Premium van ideal for larger groups and extended journeys",
       primaryAction: "See Fleet",
-      primaryRoute: "/fleet",
+      primaryRoute: "/services",
     },
     {
       image: bmw,
@@ -228,7 +228,7 @@ export const FleetTile = () => {
       luggage: "5-7 large bags",
       comfort: "Comfortable mid-size SUV for families and small groups",
       primaryAction: "See Fleet",
-      primaryRoute: "/fleet",
+      primaryRoute: "/services",
     },
   ];
 
