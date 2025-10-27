@@ -43,10 +43,14 @@ export const ServiceItem = ({
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: "primary.light",
+            backgroundColor: "rgba(255, 255, 255, 0.1)", // Light blue background
             width: "48px",
             height: "48px",
             borderRadius: "50%",
+            "& .MuiSvgIcon-root": {
+              fontSize: "1.5rem",
+              color: "primary.main",
+            },
           }}
         >
           {icon}

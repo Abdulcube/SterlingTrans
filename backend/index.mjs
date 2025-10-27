@@ -39,7 +39,7 @@ app.post("/api/contact", async (req, res) => {
       pass: process.env.EMAIL_PASSWORD,
     },
   });
-
+  console.log("Sending email...", mailOptions);
   const info = await transporter.sendMail(mailOptions);
   console.log("Message sent: %s", info.messageId);
 
