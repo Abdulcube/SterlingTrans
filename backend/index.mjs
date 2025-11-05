@@ -27,7 +27,7 @@ app.post("/api/contact", async (req, res) => {
   console.log(req.body);
   let mailOptions = {
     from: process.env.EMAIL_ADDRESS,
-    to: "abdulrahman.shaaeldin@gmail.com",
+    to: "info@ridesterling.com, abdulssoftware@gmail.com",
     subject: `Sterling Website ${req.body.location} Contact: ${req.body.name}`,
     text: `Name: ${req.body.name}\nPhone: ${req.body.phone}\nEmail: ${req.body.email}\nMessage: ${req.body.message}`,
   };
